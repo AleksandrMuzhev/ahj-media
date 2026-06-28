@@ -26,6 +26,7 @@ h1 {
     margin-bottom: 24px;
 }
 
+/* ===== Лента постов ===== */
 .timeline {
     min-height: 300px;
     max-height: 500px;
@@ -60,6 +61,49 @@ h1 {
     content: '📍 ';
 }
 
+.post-type-badge {
+    display: inline-block;
+    font-size: 12px;
+    padding: 2px 10px;
+    border-radius: 12px;
+    background: #667eea;
+    color: white;
+    margin-bottom: 6px;
+}
+
+.post-type-badge.audio {
+    background: #28a745;
+}
+
+.post-type-badge.video {
+    background: #dc3545;
+}
+
+/* Аудио-пост */
+.post-audio {
+    width: 100%;
+    margin-top: 8px;
+}
+
+.post-audio audio {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Видео-пост */
+.post-video {
+    width: 100%;
+    margin-top: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.post-video video {
+    width: 100%;
+    border-radius: 8px;
+    max-height: 300px;
+}
+
 .empty-message {
     text-align: center;
     color: #999;
@@ -67,7 +111,7 @@ h1 {
     font-style: italic;
 }
 
-/* Поле ввода */
+/* ===== Поле ввода ===== */
 .input-area {
     position: relative;
 }
@@ -119,24 +163,105 @@ h1 {
     background: #f0f0f0;
 }
 
+/* ===== Управление записью ===== */
 .recording-controls {
-    display: flex;
+    display: none;
     align-items: center;
-    gap: 12px;
-    padding: 8px;
+    justify-content: center;
+    gap: 16px;
+    padding: 8px 20px;
+    margin-top: 8px;
     background: #f8f9fa;
     border-radius: 12px;
-    margin-top: 8px;
+}
+
+.recording-controls.active {
+    display: flex;
 }
 
 #recording-timer {
     font-family: monospace;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     color: #dc3545;
+    min-width: 60px;
+    text-align: center;
 }
 
-/* Модальное окно */
+.recording-controls .action-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #e9ecef;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.recording-controls .action-btn:hover {
+    background: #dee2e6;
+}
+
+.recording-controls .action-btn#recording-ok {
+    background: #28a745;
+    color: white;
+}
+
+.recording-controls .action-btn#recording-ok:hover {
+    background: #218838;
+}
+
+.recording-controls .action-btn#recording-cancel {
+    background: #dc3545;
+    color: white;
+}
+
+.recording-controls .action-btn#recording-cancel:hover {
+    background: #c82333;
+}
+
+/* ===== Видео превью ===== */
+.video-preview-container {
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    max-width: 90vw;
+    z-index: 999;
+    border-radius: 16px;
+    background: #1a1a1a;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.video-preview-container video {
+    width: 100%;
+    display: block;
+}
+
+.video-preview-container .video-preview-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.2s;
+}
+
+.video-preview-container .video-preview-close:hover {
+    background: rgba(255, 0, 0, 0.8);
+}
+
+/* ===== Модальное окно ===== */
 .modal-overlay {
     display: none;
     position: fixed;
