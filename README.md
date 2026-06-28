@@ -1,5 +1,3 @@
-## README.md для задачи 1 (Timeline — Текстовые записи с координатами)
-
 [![Build and Deploy](https://github.com/AleksandrMuzhev/ahj-media/actions/workflows/web.yml/badge.svg)](https://github.com/AleksandrMuzhev/ahj-media/actions/workflows/web.yml)
 
 # Timeline — Текстовые записи с координатами
