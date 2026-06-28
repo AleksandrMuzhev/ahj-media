@@ -2,9 +2,9 @@ name: Build and Deploy
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main, master, media ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ main, master, media ]
 
 permissions:
   contents: read
